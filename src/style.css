@@ -1,0 +1,40 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #0b1730;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+#panel {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 280px;
+  padding: 16px 20px;
+  background: rgba(15, 30, 60, 0.92);
+  border: 1px solid #2f80ff;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+#panel h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #ffd54a;
+}
+
+#panel p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.oculto {
+  display: none;
+}
