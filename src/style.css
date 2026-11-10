@@ -11,6 +11,43 @@ html, body {
   height: 100%;
 }
 
+/* ----- Botones ----- */
+button {
+  border: none;
+  border-radius: 12px;
+  background: #2f80ff;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#inicio button,
+#quiz-final button {
+  min-width: 260px;
+  min-height: 70px;
+  font-size: 28px;
+}
+
+#btn-preguntas {
+  background: #8e44ad;
+}
+
+#btn-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 120px;
+  min-height: 56px;
+  font-size: 20px;
+}
+
 /* ----- Pantalla de inicio ----- */
 #inicio {
   position: fixed;
@@ -48,28 +85,91 @@ html, body {
   color: #b8c7e0;
 }
 
-button {
-  border: none;
-  border-radius: 12px;
-  background: #2f80ff;
-  color: #ffffff;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#btn-jugar {
-  min-width: 260px;
-  min-height: 70px;
-  font-size: 28px;
-}
-
-#btn-menu {
+/* ----- Modo preguntas ----- */
+#quiz {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  min-width: 120px;
-  min-height: 56px;
-  font-size: 20px;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #0b1730;
+  color: #ffffff;
+}
+
+#quiz-juego,
+#quiz-final {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.quiz-barra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+  font-size: 22px;
+}
+
+#btn-quiz-salir {
+  min-width: 110px;
+  min-height: 50px;
+  font-size: 18px;
+}
+
+#quiz-vidas {
+  color: #ff5a6e;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
+
+#quiz-tiempo {
+  color: #ffd54a;
+}
+
+#quiz-pregunta {
+  margin: 0 0 28px;
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+#quiz-opciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.opcion {
+  min-height: 90px;
+  padding: 12px 16px;
+  font-size: 24px;
+  background: #16294d;
+  border: 2px solid #2f80ff;
+}
+
+.opcion.correcta {
+  background: #1e8e4e;
+  border-color: #43d17b;
+}
+
+.opcion.incorrecta {
+  background: #b3263a;
+  border-color: #ff5a6e;
+}
+
+#quiz-final h2 {
+  margin: 0 0 16px;
+  font-size: 48px;
+  color: #ffd54a;
+}
+
+#quiz-final p {
+  margin: 0 0 32px;
+  font-size: 28px;
 }
 
 /* ----- Panel de información ----- */

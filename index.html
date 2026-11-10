@@ -13,10 +13,36 @@
       <h1>SMARTBOARD <span>3D</span></h1>
       <p class="lema">Aprende · Explora · Conecta</p>
       <p class="texto">Explora la mainboard, conoce sus componentes y domina sus conexiones.</p>
-      <button id="btn-jugar">JUGAR</button>
+      <div class="botones">
+        <button id="btn-aprender">APRENDER</button>
+        <button id="btn-preguntas">PREGUNTAS</button>
+      </div>
     </div>
 
     <button id="btn-menu" class="oculto">← Menú</button>
+
+    <div id="quiz" class="oculto">
+      <div id="quiz-juego">
+        <div class="quiz-barra">
+          <button id="btn-quiz-salir">← Menú</button>
+          <span id="quiz-vidas"></span>
+          <span id="quiz-progreso"></span>
+          <span id="quiz-tiempo"></span>
+          <span id="quiz-puntaje"></span>
+        </div>
+        <h2 id="quiz-pregunta"></h2>
+        <div id="quiz-opciones"></div>
+      </div>
+
+      <div id="quiz-final" class="oculto">
+        <h2 id="quiz-final-titulo"></h2>
+        <p id="quiz-final-texto"></p>
+        <div class="botones">
+          <button id="btn-reintentar">JUGAR DE NUEVO</button>
+          <button id="btn-quiz-menu">MENÚ</button>
+        </div>
+      </div>
+    </div>
 
     <div id="panel" class="oculto">
       <h2 id="panel-titulo"></h2>

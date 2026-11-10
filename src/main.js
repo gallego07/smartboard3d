@@ -1,13 +1,15 @@
 import './style.css';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { abrirQuiz } from './quiz.js';
 
 const app = document.querySelector('#app');
 const panel = document.querySelector('#panel');
 const panelTitulo = document.querySelector('#panel-titulo');
 const panelTexto = document.querySelector('#panel-texto');
 const inicio = document.querySelector('#inicio');
-const btnJugar = document.querySelector('#btn-jugar');
+const btnAprender = document.querySelector('#btn-aprender');
+const btnPreguntas = document.querySelector('#btn-preguntas');
 const btnMenu = document.querySelector('#btn-menu');
 
 const escena = new THREE.Scene();
@@ -103,9 +105,14 @@ function deseleccionar() {
 }
 
 // ----- Pantalla de inicio -----
-btnJugar.addEventListener('click', () => {
+btnAprender.addEventListener('click', () => {
   inicio.classList.add('oculto');
   btnMenu.classList.remove('oculto');
+});
+
+btnPreguntas.addEventListener('click', () => {
+  inicio.classList.add('oculto');
+  abrirQuiz(() => inicio.classList.remove('oculto'));
 });
 
 btnMenu.addEventListener('click', () => {
