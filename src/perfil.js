@@ -7,19 +7,23 @@ const elMejor = document.querySelector('#perfil-mejor');
 const elXp = document.querySelector('#perfil-xp');
 const elProgreso = document.querySelector('#perfil-progreso');
 
-let perfil = cargar();
+function nuevoPerfil() {
+  return { nombre: '', xp: 0, mejorPuntaje: 0, estrellas: [0, 0, 0] };
+}
 
 function cargar() {
   try {
     const guardado = localStorage.getItem(CLAVE);
     if (guardado) {
-      return { nombre: '', xp: 0, mejorPuntaje: 0, ...JSON.parse(guardado) };
+      return { ...nuevoPerfil(), ...JSON.parse(guardado) };
     }
   } catch (error) {
     console.warn('No se pudo leer el perfil', error);
   }
-  return { nombre: '', xp: 0, mejorPuntaje: 0 };
+  return nuevoPerfil();
 }
+
+let perfil = cargar();
 
 function guardar() {
   try {
@@ -42,19 +46,32 @@ export function nombreJugador() {
   return perfil.nombre.trim() || 'Estudiante';
 }
 
-export function registrarPartida(puntaje) {
+export function estrellasDe(indiceReto) {
+  return perfil.estrellas[indiceReto] || 0;
+}
+
+export function retoDesbloqueado(indiceReto) {
+  return indiceReto === 0 || estrellasDe(indiceReto - 1) >= 1;
+}
+
+export function registrarPartida(puntaje, indiceReto, estrellas) {
   const nivelAntes = Math.floor(perfil.xp / XP_POR_NIVEL) + 1;
+  const estabaAbierto = retoDesbloqueado(indiceReto + 1);
 
   perfil.xp += puntaje;
   if (puntaje > perfil.mejorPuntaje) perfil.mejorPuntaje = puntaje;
+  if (estrellas > estrellasDe(indiceReto)) perfil.estrellas[indiceReto] = estrellas;
   guardar();
   mostrar();
 
   const nivelDespues = Math.floor(perfil.xp / XP_POR_NIVEL) + 1;
+  const existeSiguiente = indiceReto + 1 < perfil.estrellas.length;
+
   return {
     xpGanado: puntaje,
     subioNivel: nivelDespues > nivelAntes,
     nivel: nivelDespues,
+    desbloqueo: existeSiguiente && !estabaAbierto && retoDesbloqueado(indiceReto + 1),
   };
 }
 

@@ -258,3 +258,65 @@ button {
   font-size: 14px;
   color: #b8c7e0;
 }
+
+/* ----- Selección de reto ----- */
+#quiz-retos {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+#quiz-retos h2 {
+  margin: 0 0 28px;
+  font-size: 40px;
+}
+
+#quiz-lista-retos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.reto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 180px;
+  padding: 20px 12px;
+  background: #16294d;
+  border: 2px solid #2f80ff;
+}
+
+.reto:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.reto-nombre {
+  font-size: 28px;
+}
+
+.reto-estrellas {
+  font-size: 34px;
+  color: #ffd54a;
+}
+
+.reto-info {
+  font-size: 18px;
+  color: #b8c7e0;
+}
+
+#btn-retos-menu,
+#btn-quiz-retos {
+  min-width: 110px;
+  min-height: 50px;
+  font-size: 18px;
+}
+
+#quiz-final-estrellas {
+  margin-bottom: 12px;
+  font-size: 56px;
+  color: #ffd54a;
+}

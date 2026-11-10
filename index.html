@@ -17,7 +17,7 @@
         <button id="btn-aprender">APRENDER</button>
         <button id="btn-preguntas">PREGUNTAS</button>
       </div>
-       <div id="perfil">
+      <div id="perfil">
         <input id="perfil-nombre" type="text" maxlength="20" placeholder="Escribe tu nombre" />
         <div id="perfil-datos">
           <span id="perfil-nivel"></span>
@@ -31,9 +31,15 @@
     <button id="btn-menu" class="oculto">← Menú</button>
 
     <div id="quiz" class="oculto">
-      <div id="quiz-juego">
+      <div id="quiz-retos">
+        <h2>Elige un reto</h2>
+        <div id="quiz-lista-retos"></div>
+        <button id="btn-retos-menu">← Menú</button>
+      </div>
+
+      <div id="quiz-juego" class="oculto">
         <div class="quiz-barra">
-          <button id="btn-quiz-salir">← Menú</button>
+          <button id="btn-quiz-retos">← Retos</button>
           <span id="quiz-vidas"></span>
           <span id="quiz-progreso"></span>
           <span id="quiz-tiempo"></span>
@@ -44,11 +50,13 @@
       </div>
 
       <div id="quiz-final" class="oculto">
+        <div id="quiz-final-estrellas"></div>
         <h2 id="quiz-final-titulo"></h2>
         <p id="quiz-final-texto"></p>
         <div class="botones">
           <button id="btn-reintentar">JUGAR DE NUEVO</button>
-          <button id="btn-quiz-menu">MENÚ</button>
+          <button id="btn-final-retos">RETOS</button>
+          <button id="btn-final-menu">MENÚ</button>
         </div>
       </div>
     </div>
