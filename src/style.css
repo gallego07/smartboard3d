@@ -200,3 +200,61 @@ button {
 .oculto {
   display: none !important;
 }
+
+/* ----- Perfil ----- */
+#perfil {
+  width: 360px;
+  max-width: 90%;
+  margin-top: 40px;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  border: 1px solid #2f80ff;
+  border-radius: 12px;
+  background: rgba(15, 30, 60, 0.9);
+}
+
+#perfil-nombre {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px solid #2f80ff;
+  border-radius: 8px;
+  background: #0b1730;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+#perfil-datos {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+#perfil-nivel {
+  color: #ffd54a;
+  font-weight: bold;
+}
+
+#perfil-barra {
+  height: 12px;
+  border-radius: 6px;
+  background: #16294d;
+  overflow: hidden;
+}
+
+#perfil-progreso {
+  width: 0;
+  height: 100%;
+  background: #2f80ff;
+  transition: width 0.4s;
+}
+
+#perfil-xp {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #b8c7e0;
+}

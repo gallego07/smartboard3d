@@ -1,4 +1,5 @@
 import { preguntas } from './preguntas.js';
+import { registrarPartida, nombreJugador } from './perfil.js';
 
 const TIEMPO_POR_PREGUNTA = 20;
 const VIDAS_INICIALES = 3;
@@ -101,8 +102,13 @@ function terminar() {
   clearInterval(reloj);
   elJuego.classList.add('oculto');
   elFinal.classList.remove('oculto');
+
+  const resultado = registrarPartida(puntaje);
+
   elFinalTitulo.textContent = vidas > 0 ? '¡Nivel completado!' : 'Se acabaron las vidas';
-  elFinalTexto.textContent = `Aciertos: ${aciertos} de ${lista.length} · Puntaje: ${puntaje}`;
+  let texto = `${nombreJugador()}: ${aciertos} de ${lista.length} aciertos · Puntaje: ${puntaje} · +${resultado.xpGanado} XP`;
+  if (resultado.subioNivel) texto += ` · ¡Subiste al nivel ${resultado.nivel}!`;
+  elFinalTexto.textContent = texto;
 }
 
 function comenzar() {
