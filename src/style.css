@@ -3,6 +3,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   background: #0b1730;
+  font-family: Arial, sans-serif;
 }
 
 #app {
@@ -10,6 +11,68 @@ html, body {
   height: 100%;
 }
 
+/* ----- Pantalla de inicio ----- */
+#inicio {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(11, 23, 48, 0.92);
+  color: #ffffff;
+}
+
+#inicio h1 {
+  margin: 0;
+  font-size: 64px;
+  letter-spacing: 2px;
+}
+
+#inicio h1 span {
+  color: #2f80ff;
+}
+
+#inicio .lema {
+  margin: 8px 0 24px;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+#inicio .texto {
+  max-width: 420px;
+  margin: 0 0 36px;
+  font-size: 20px;
+  line-height: 1.4;
+  color: #b8c7e0;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  background: #2f80ff;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn-jugar {
+  min-width: 260px;
+  min-height: 70px;
+  font-size: 28px;
+}
+
+#btn-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 120px;
+  min-height: 56px;
+  font-size: 20px;
+}
+
+/* ----- Panel de información ----- */
 #panel {
   position: fixed;
   top: 20px;
@@ -20,7 +83,6 @@ html, body {
   border: 1px solid #2f80ff;
   border-radius: 12px;
   color: #ffffff;
-  font-family: Arial, sans-serif;
 }
 
 #panel h2 {
@@ -36,5 +98,5 @@ html, body {
 }
 
 .oculto {
-  display: none;
+  display: none !important;
 }

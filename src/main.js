@@ -6,6 +6,9 @@ const app = document.querySelector('#app');
 const panel = document.querySelector('#panel');
 const panelTitulo = document.querySelector('#panel-titulo');
 const panelTexto = document.querySelector('#panel-texto');
+const inicio = document.querySelector('#inicio');
+const btnJugar = document.querySelector('#btn-jugar');
+const btnMenu = document.querySelector('#btn-menu');
 
 const escena = new THREE.Scene();
 escena.background = new THREE.Color(0x0b1730);
@@ -98,6 +101,18 @@ function deseleccionar() {
   mallas.forEach((m) => m.material.emissive.set(0x000000));
   panel.classList.add('oculto');
 }
+
+// ----- Pantalla de inicio -----
+btnJugar.addEventListener('click', () => {
+  inicio.classList.add('oculto');
+  btnMenu.classList.remove('oculto');
+});
+
+btnMenu.addEventListener('click', () => {
+  deseleccionar();
+  btnMenu.classList.add('oculto');
+  inicio.classList.remove('oculto');
+});
 
 renderizador.domElement.addEventListener('pointerdown', (e) => {
   inicioX = e.clientX;
