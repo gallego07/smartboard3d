@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/smartboard3d/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMARTBOARD 3D</title>
+    <script type="module" crossorigin src="/smartboard3d/assets/index-CUVUw0Lh.js"></script>
+    <link rel="stylesheet" crossorigin href="/smartboard3d/assets/index-40BeWIQM.css">
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="inicio">
+      <h1>SMARTBOARD <span>3D</span></h1>
+      <p class="lema">Aprende · Explora · Conecta</p>
+      <p class="texto">Explora la mainboard, conoce sus componentes y domina sus conexiones.</p>
+      <div class="botones">
+        <button id="btn-aprender">APRENDER</button>
+        <button id="btn-preguntas">PREGUNTAS</button>
+      </div>
+      <div id="perfil">
+        <input id="perfil-nombre" type="text" maxlength="20" placeholder="Escribe tu nombre" />
+        <div id="perfil-datos">
+          <span id="perfil-nivel"></span>
+          <span id="perfil-mejor"></span>
+        </div>
+        <div id="perfil-barra"><div id="perfil-progreso"></div></div>
+        <span id="perfil-xp"></span>
+      </div>
+    </div>
+
+    <button id="btn-menu" class="oculto">← Menú</button>
+
+    <div id="quiz" class="oculto">
+      <div id="quiz-retos">
+        <h2>Elige un reto</h2>
+        <div id="quiz-lista-retos"></div>
+        <button id="btn-retos-menu">← Menú</button>
+      </div>
+
+      <div id="quiz-juego" class="oculto">
+        <div class="quiz-barra">
+          <button id="btn-quiz-retos">← Retos</button>
+          <span id="quiz-vidas"></span>
+          <span id="quiz-progreso"></span>
+          <span id="quiz-tiempo"></span>
+          <span id="quiz-puntaje"></span>
+        </div>
+        <h2 id="quiz-pregunta"></h2>
+        <div id="quiz-opciones"></div>
+      </div>
+
+      <div id="quiz-final" class="oculto">
+        <div id="quiz-final-estrellas"></div>
+        <h2 id="quiz-final-titulo"></h2>
+        <p id="quiz-final-texto"></p>
+        <div class="botones">
+          <button id="btn-reintentar">JUGAR DE NUEVO</button>
+          <button id="btn-final-retos">RETOS</button>
+          <button id="btn-final-menu">MENÚ</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel" class="oculto">
+      <h2 id="panel-titulo"></h2>
+      <p id="panel-texto"></p>
+    </div>
+
+  </body>
+</html>
